@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 500px;
     border-radius: 0.5em;
-    border: 1px solid rgb(155, 155, 155);
+    border: 1px dashed rgb(155, 155, 155);
     padding: 2em;
     text-align: center;
   }
@@ -51,7 +51,8 @@
   }
   
   .upload-btn label:hover {
-    background: #252525;
+    background: #2378be;
+    color:aliceblue
   }
   
   .upload-btn svg {

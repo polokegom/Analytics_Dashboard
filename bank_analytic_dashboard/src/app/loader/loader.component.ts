@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { PdfconverterService } from '../pdfconverter.service';
+import { ApipdfconverterService } from '../apipdfconverter.service';
 
 @Component({
   selector: 'app-loader',
@@ -8,7 +10,7 @@ import { Component, HostListener } from '@angular/core';
 export class LoaderComponent {
   csvContent!: string;
   counter:any = 0;
-  constructor(){
+  constructor(private api: ApipdfconverterService){
 
 
   }
@@ -22,7 +24,7 @@ export class LoaderComponent {
 
     const files = event.dataTransfer?.files;
     if (files && files.length > 0) {
-      console.log("WORKING");
+      
 
       const fileName = files[0].name;
       console.log(`Selected file name: ${fileName}`);
@@ -34,6 +36,20 @@ export class LoaderComponent {
     //console.log(this.counter)
     event.preventDefault();      
    
+  }
+
+  onFileChosen(event:any):void{
+
+    console.log(event.target.files)
+    let files = event.target.files
+    console.log("WORKING");
+      /**/this.api.convertPDFtoCSV(files[0]).subscribe ((res)=>{
+        alert("HELLO")
+        console.log(res)
+        alert("HELLO")
+
+      })
+      alert("&&&&&&&&&&&")
   }
 
 

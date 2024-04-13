@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { LoaderComponent } from './loader/loader.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SplashComponent } from './splash/splash.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SplashComponent } from './splash/splash.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
