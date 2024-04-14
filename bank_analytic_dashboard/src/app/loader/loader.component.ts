@@ -46,8 +46,7 @@ export class LoaderComponent {
       /**/this.api.convertPDFtoCSV(files[0]).subscribe ((res)=>{
         alert("HELLO")
         console.log(res)
-        alert("HELLO")
-
+        alert("OLLEH")
       })
       alert("&&&&&&&&&&&")
   }

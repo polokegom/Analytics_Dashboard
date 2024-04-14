@@ -12,10 +12,17 @@ export class ApipdfconverterService {
 
   public convertPDFtoCSV(pdfFile:File): Observable<any> {
 
-    const headers = new HttpHeaders({
-      'x-api-key': 'pomakga022@student.wethinkcode.co.za_39O6yv42Wcv8QT1HQi4QIYtVxadXZWc9ShnbN8UTpA34j9mGLNCQDUSVsOU27v3a'
-    });
+    const username = '41ca3882655109d0bd827e78aa5afe0f154e8d69';
+    const password = ''; // Assuming no password in your curl command
+    const base64Credentials = btoa(username + ':' + password);
 
-    return this.http.get<any>('https://pdftables.com/api/remaining?key=2zhfvzmp0bpf');
+    // Add the Authorization header with the encoded credentials
+    const headers = {
+      'Authorization': 'Basic ' + base64Credentials,
+      'Content-Type': 'application/json'
+    };
+
+    // Make the HTTP request
+    return this.http.get('http://localhost:40010/authenticate', { headers });
   }
 }
