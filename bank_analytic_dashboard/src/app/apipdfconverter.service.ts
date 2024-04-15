@@ -23,6 +23,6 @@ export class ApipdfconverterService {
     };
 
     // Make the HTTP request
-    return this.http.get('http://localhost:40010/authenticate', { headers });
+    return this.http.get('http://localhost:40000/authenticate', { headers });
   }
 }
